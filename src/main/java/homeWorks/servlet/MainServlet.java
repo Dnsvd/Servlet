@@ -17,9 +17,14 @@ public class MainServlet extends HttpServlet {
 
     private final PostRepository repository;
 
+    public MainServlet() {
+        this.repository = new PostRepository();
+    }
     public MainServlet(PostRepository repository) {
         this.repository = repository;
     }
+
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
