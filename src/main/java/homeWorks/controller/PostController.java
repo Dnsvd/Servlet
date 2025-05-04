@@ -1,5 +1,6 @@
 package homeWorks.controller;
 
+import com.google.gson.GsonBuilder;
 import homeWorks.exception.NotFoundException;
 import homeWorks.model.Post;
 import homeWorks.service.PostService;
@@ -16,11 +17,14 @@ public class PostController {
 
     public PostController(PostService service) {
         this.service = service;
-        this.gson = new Gson();
+        this.gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .disableHtmlEscaping().create();
     }
 
     public void all(HttpServletResponse response) throws IOException {
         response.setContentType(APPLICATION_JSON);
+        response.setCharacterEncoding("UTF-8");
         final var data = service.all();
         response.getWriter().print(gson.toJson(data));
     }
@@ -38,6 +42,7 @@ public class PostController {
 
     public void save(Reader body, HttpServletResponse response) throws IOException {
         response.setContentType(APPLICATION_JSON);
+        response.setCharacterEncoding("UTF-8");
         final var post = gson.fromJson(body, Post.class);
         final var data = service.save(post);
         response.getWriter().print(gson.toJson(data));

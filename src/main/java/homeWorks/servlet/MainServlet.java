@@ -52,6 +52,7 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        req.setCharacterEncoding(UTF_8);
         final var path = req.getRequestURI();
 
         if (!path.equals(ROOT_PATH)) {
