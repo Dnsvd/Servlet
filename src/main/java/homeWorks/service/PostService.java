@@ -1,8 +1,8 @@
-package HomeWorks.service;
+package homeWorks.service;
 
-import HomeWorks.exception.NotFoundException;
-import HomeWorks.model.Post;
-import HomeWorks.repository.PostRepository;
+import homeWorks.exception.NotFoundException;
+import homeWorks.model.Post;
+import homeWorks.repository.PostRepository;
 
 import java.util.List;
 
@@ -18,7 +18,11 @@ public class PostService {
     }
 
     public Post getById(long id) {
-        return repository.getById(id).orElseThrow(NotFoundException::new);
+        Post post = repository.getById(id);
+        if (post == null) {
+            throw new NotFoundException("Post with id " + id + " not found");
+        }
+        return post;
     }
 
     public Post save(Post post) {
@@ -26,6 +30,9 @@ public class PostService {
     }
 
     public void removeById(long id) {
+        if (repository.getById(id) == null) {
+            throw new NotFoundException("Post with id " + id + " not found");
+        }
         repository.removeById(id);
     }
 }

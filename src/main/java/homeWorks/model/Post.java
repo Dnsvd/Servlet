@@ -1,11 +1,10 @@
-package HomeWorks.model;
+package homeWorks.model;
+
+import com.google.gson.Gson;
 
 public class Post {
     private long id;
     private String content;
-
-    public Post() {
-    }
 
     public Post(long id, String content) {
         this.id = id;
@@ -16,15 +15,15 @@ public class Post {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public static Post fromJson(String json) {
+        return new Gson().fromJson(json, Post.class);
+    }
+
+    public String toJson() {
+        return new Gson().toJson(this);
     }
 }
