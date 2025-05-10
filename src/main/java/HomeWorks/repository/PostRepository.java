@@ -1,6 +1,6 @@
-package homeWorks.repository;
+package HomeWorks.repository;
 
-import homeWorks.model.Post;
+import HomeWorks.model.Post;
 
 import java.util.ArrayList;
 import java.util.List;

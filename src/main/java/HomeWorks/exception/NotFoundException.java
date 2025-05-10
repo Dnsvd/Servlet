@@ -1,4 +1,4 @@
-package homeWorks.exception;
+package HomeWorks.exception;
 
 public class NotFoundException extends RuntimeException {
     public NotFoundException() {
