@@ -1,4 +1,4 @@
-package homeWorks.model;
+package HomeWorks.model;
 
 import com.google.gson.Gson;
 
