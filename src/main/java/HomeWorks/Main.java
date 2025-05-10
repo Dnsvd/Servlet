@@ -11,10 +11,5 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
-//        final var context = new AnnotationConfigApplicationContext("HomeWorks");
-//        final var repository = context.getBean(PostRepository.class);
-//        final var controller = context.getBean(PostController.class);
-//        final var service = context.getBean(PostService.class);
-
     }
 }

@@ -1,14 +1,12 @@
 package HomeWorks.repository;
 
 import HomeWorks.model.Post;
-import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Repository
 public class PostRepository {
     private final AtomicLong counter = new AtomicLong(1);
     private final ConcurrentHashMap<Long, Post> posts = new ConcurrentHashMap<>();

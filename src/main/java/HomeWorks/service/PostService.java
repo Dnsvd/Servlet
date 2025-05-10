@@ -3,11 +3,9 @@ package HomeWorks.service;
 import HomeWorks.exception.NotFoundException;
 import HomeWorks.model.Post;
 import HomeWorks.repository.PostRepository;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public class PostService {
     private final PostRepository repository;
 
